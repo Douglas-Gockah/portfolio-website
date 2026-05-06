@@ -28,13 +28,13 @@ export async function getProjects(): Promise<Project[]> {
     title: getText(page.properties.Title),
     slug: getText(page.properties.Slug),
     description: getText(page.properties.Description),
-        tags: page.properties.Tags?.multi_select?.map((s: any) => s.name) ?? [],
+    tags: page.properties.Tags?.multi_select?.map((s: any) => s.name) ?? [],
     status: getText(page.properties.Status),
     company: getText(page.properties.Company),
     date: getText(page.properties.Date),
     coverImage: getText(page.properties['Cover Image URL']),
-    featured: getText(page.properties.Featured),
-    nda: getText(page.properties.NDA),
+    featured: !!page.properties.Featured?.checkbox,
+    nda: !!page.properties.NDA?.checkbox,
     order: Number(getText(page.properties.Order)) || 0,
   }));
 }
