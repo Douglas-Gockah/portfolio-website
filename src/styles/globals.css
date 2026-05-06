@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #ffffff;
+  --bg2: #f5f5f5;
+  --bg3: #eeeeee;
+  --border: #e5e5e5;
+  --border2: #d5d5d5;
+  --t1: #1a1a1a;
+  --t2: #666666;
+  --t3: #999999;
+  --accent: #1a1a1a;
+  --green: #22c55e;
+}
+
+[data-theme='dark'] {
+  --bg: #0a0a0a;
+  --bg2: #141414;
+  --bg3: #1e1e1e;
+  --border: #2a2a2a;
+  --border2: #3a3a3a;
+  --t1: #ffffff;
+  --t2: #a0a0a0;
+  --t3: #666666;
+  --accent: #ffffff;
+  --green: #22c55e;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--t1);
+  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Utility classes */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .heading-tight {
+    letter-spacing: -0.3px;
+  }
+
+  .heading-tighter {
+    letter-spacing: -0.5px;
+  }
+}
