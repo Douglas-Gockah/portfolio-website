@@ -28,7 +28,7 @@ export async function getProjects(): Promise<Project[]> {
     title: getText(page.properties.Title),
     slug: getText(page.properties.Slug),
     description: getText(page.properties.Description),
-    tags: getText(page.properties.Tags),
+        tags: page.properties.Tags?.multi_select?.map((s: any) => s.name) ?? [],
     status: getText(page.properties.Status),
     company: getText(page.properties.Company),
     date: getText(page.properties.Date),
