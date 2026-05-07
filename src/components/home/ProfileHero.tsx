@@ -1,11 +1,16 @@
 interface ProfileHeroProps {
-  headline: string;
-  subtitle: string;
-  status: string;
-  email: string;
+  headline?: string;
+  subtitle?: string;
+  status?: string;
+  email?: string;
 }
 
-export function ProfileHero({ headline, subtitle, status, email }: ProfileHeroProps) {
+export function ProfileHero({
+  headline = 'Douglas Gockah',
+  subtitle = 'Product Designer crafting intuitive interfaces for enterprise platforms, payment systems, and digital products.',
+  status = 'Available for work',
+  email = 'douglasgockah@gmail.com',
+}: ProfileHeroProps = {}) {
   return (
     <section className="flex flex-col items-center text-center gap-4 pt-8">
       {/* Avatar */}
